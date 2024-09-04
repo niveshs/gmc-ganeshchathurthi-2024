@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 1000px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total-amount, .remaining-amount {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Vinayaka Chavithi 2024 - GM Complex</h1>
+<h2 align="center">Expense Tracker</h1>
+
+    <div class="table-container">
+        <table class="overview-table">
+		<tbody id="overviewTableBody">
+        <tr>
+            <td>Total Amount</td>
+            <td><span id="ta" </span></td>
+        </tr>
+        <tr>
+            <td>Remaining Amount</td>
+            <td><span id="ra" </span></td>
+        </tr>
+		</tbody>
+        </table>
+    </div>
+
+<h2>Expenses</h2>
+
+<table class="expense-table">
+    <thead>
+        <tr>
+            <th>Expense</th>
+            <th>Expense Amount</th>
+        </tr>
+    </thead>
+    <tbody id="expenseTableBody">
+		<tr>
+            <td>Pandhiri</td>
+            <td>16000</td>
+        </tr>
+		<tr>
+            <td>Band</td>
+            <td>15000</td>
+        </tr>
+		<tr>
+            <td>Nimajjanam Food</td>
+            <td>6000</td>
+        </tr>
+		<tr>
+            <td>Laddoo</td>
+            <td>1500</td>
+        </tr>
+		<tr>
+            <td>Crackers</td>
+            <td>9200</td>
+        </tr>
+		<tr>
+            <td>Decoration Lights</td>
+            <td>5100</td>
+        </tr>
+		 <tr>
+            <td>Vigraham Selection</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Vigraham Transport</td>
+            <td>3500</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+        const totalAmount = 54000; // Example total amount available
+		document.getElementById("ta").innerHTML = totalAmount;
+        let totalExpenses = 0;
+
+        // Calculate total expenses
+        const rows = document.querySelectorAll('#expenseTableBody tr');
+        rows.forEach(row => {
+            const expenseAmount = parseFloat(row.cells[1].textContent.replace('$', ''));
+            totalExpenses += expenseAmount;
+        });
+
+        document.getElementById("ra").innerHTML = totalAmount - totalExpenses;
+
+</script>
+
+</body>
+</html>
