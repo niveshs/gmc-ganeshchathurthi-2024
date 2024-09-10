@@ -37,6 +37,14 @@
     <div class="table-container">
         <table class="overview-table">
 		<tbody id="overviewTableBody">
+	<tr>
+            <td>Chandha Amount</td>
+            <td><span id="ca" </span></td>
+	</tr>
+	<tr>
+            <td>Laddoo Amount</td>
+            <td><span id="la" </span></td>
+        </tr>
         <tr>
             <td>Total Amount</td>
             <td><span id="ta" </span></td>
@@ -192,7 +200,11 @@
 </table>
 
 <script>
-        const totalAmount = 80984; // Example total amount available
+        const chandhaAmount = 80984; // Example total amount available
+		document.getElementById("ca").innerHTML = chandhaAmount;
+	const laddooAmount = 23200; // Example total amount available
+		document.getElementById("la").innerHTML = laddooAmount;
+	const totalAmount = chandhaAmount + laddooAmount; // Example total amount available
 		document.getElementById("ta").innerHTML = totalAmount;
         let totalExpenses = 0;
 
